@@ -1,4 +1,8 @@
 import discord
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -21,4 +25,4 @@ async def on_message(message):
         await message.channel.send("Hello!")
 
 
-client.run("MTEzMzgxMjQ4NDk1MjgyNTg4Nw.GUvYZL.8KZiDg2sEAIeZ_8N8wzFboSXCm41NAYGzKMK6s")
+client.run(os.getenv("Token"))
